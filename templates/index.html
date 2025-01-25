@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>デジモン進化図</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f6d365, #fda085);
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      form {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        color: #fff;
+        background: #fda085;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: #f6d365;
+      }
+
+      a {
+        text-align: center;
+        color: #fda085;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #f6d365;
+      }
+
+      /* 画像のスクロールを有効にする */
+      .image-container {
+        margin-top: 20px;
+        overflow-x: auto;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        display: block;
+        max-width: none; /* 画像の幅制限を解除 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>デジモン進化図</h1>
+    <form action="/search" method="get">
+      <label for="start">スタート</label>
+      <input type="text" id="start" name="start" value="{{ start }}" />
+      <label for="dest">ゴール</label>
+      <input type="text" id="dest" name="dest" value="{{ dest }}" />
+      <button type="submit">検索</button>
+      <a href="/">リセット</a>
+    </form>
+    <div class="image-container">
+      <img src="{{ img }}" alt="evolution diagram" />
+    </div>
+  </body>
+</html>
