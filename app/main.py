@@ -2,7 +2,7 @@ from typing import Annotated
 from fastapi import FastAPI, Request, Depends
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from service import render, render_selected
+from app.service import render, render_selected
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
