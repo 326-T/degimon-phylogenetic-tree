@@ -7,7 +7,7 @@ import networkx as nx
 
 
 def get_data() -> pl.DataFrame:
-    return pl.read_csv("static/degimon_tree.csv")
+    return pl.read_csv("static/digimon_tree.csv")
 
 
 def get_identities(data: Annotated[pl.DataFrame, Depends(get_data)]) -> pl.DataFrame:
